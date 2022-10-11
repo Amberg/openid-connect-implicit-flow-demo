@@ -7,6 +7,7 @@ var app = WebApplication.CreateBuilder(args).Build();
 /*
  * This Endpoint is hit after startup ---> redirects to Identity server authorize endpoint
  * See: https://openid.net/specs/openid-connect-core-1_0.html#HybridAuthorizationEndpoint
+ * Your application should trigger this redirect if the user is not logged in --> ae no auth cookie found (there are libraries for that)
  */
 app.MapGet("/", (context) =>
 {
